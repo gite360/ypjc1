@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>settm</servlet-name>
+    <servlet-class>settm</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getall</servlet-name>
+    <servlet-class>getall</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>gettm</servlet-name>
+    <servlet-class>gettm</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>gettask</servlet-name>
+    <servlet-class>gettask</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>gettmnr</servlet-name>
+    <servlet-class>gettmnr</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>setinfo</servlet-name>
+    <servlet-class>setinfo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getinfo</servlet-name>
+    <servlet-class>getinfo</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>settm</servlet-name>
+    <url-pattern>/servlet/settm</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getall</servlet-name>
+    <url-pattern>/servlet/getall</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>gettm</servlet-name>
+    <url-pattern>/servlet/gettm</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>gettask</servlet-name>
+    <url-pattern>/servlet/gettask</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>gettmnr</servlet-name>
+    <url-pattern>/servlet/gettmnr</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>setinfo</servlet-name>
+    <url-pattern>/servlet/setinfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getinfo</servlet-name>
+    <url-pattern>/servlet/getinfo</url-pattern>
+  </servlet-mapping>	
+  <welcome-file-list>
+    <welcome-file>index0.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
