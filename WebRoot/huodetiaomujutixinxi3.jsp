@@ -174,7 +174,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <table bgcolor="#ffffff" border="1" cellspacing="0" cellpadding="0" bordercolordark="#ffffff" bordercolorlight="#000000" height="185" >
  	  <tr>
    	    <td colspan="2"> 
-   		    设置检测条目的具体信息
+   		    获得检测条目的具体信息
     	</td>
   	  </tr>
  	  <tr>

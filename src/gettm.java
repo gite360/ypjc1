@@ -30,7 +30,7 @@ public class gettm extends HttpServlet {
 		jsonObject.put("检测内容2", "重金属");
 		jsonObject.put("检测内容3", "脱色试验");*/
 		/*return jsonObject.toString();*/
-		String s= "{\"检测内容0\":\"感官\",\"检测内容1\":\"脱色试验\",\"检测内容2\":\"感官\",\"检测内容3\":\"正己烷\"}";
+		String s= "{\"检测内容0\":\"蒸发残渣mg/L,4%乙酸,60℃,2h\",\"检测内容1\":\"蒸发残渣mg/L，65%乙醇，20℃，2h\",\"检测内容2\":\"感官\",\"检测内容3\":\"正己烷\"}";
 		
 		response.setCharacterEncoding("UTF-8"); 
 		response.setContentType("application/json;charset=UTF-8");
