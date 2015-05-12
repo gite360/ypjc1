@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     
     <script type="text/javascript" src="jquery-2.1.3.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" src="jquery-2.1.3.js">
       var url=location.href;
       /* url = decodeURI(url); */
       var tmp1 = url.split("?")[1]; 
@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       tmp4[1] = decodeURI(tmp4[1]);
      /*  var test = new String(request.getParameter("url").getBytes("8859_1")); */
      
-     
+     alert(Request.QueryString("no"));
      
      function allSettedInfo(){
          tiaomujutijinxi();

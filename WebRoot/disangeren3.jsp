@@ -35,6 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             var count = 0;
             var count0 = 0;
             var temp = new Array();
+            var href;
             
             $.ajax({
               dataType:"json",
@@ -46,18 +47,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                  s += "<tr><td>样品编号</td><td>样品名称</td><td>标准编号</td><td>样品数量</td></tr>";
                   /* for(i = ) */
                   $.each(jsonObject,function(key,value){
-                	  
+                	  temp.push(value);
                   });
+                  /* alert(temp.toString()); */
                    $.each(jsonObject,function(key,value){//element是data.emp json数组之中的数据  
                      if(count%4 == 0){
                         s+="<tr>";
-                        s += "<td>"+"<a href=\"jiancexiangmu3.jsp?no="+value+"\">"+value+"</td>";
+                         /* s += "<td>"+"<a href=\"jiancexiangmu3.jsp?no="+value+"&sampleName="+temp[count+1]+"&standard="+temp[count+2]+"\"target=\"view_window\">"+value+"</td>"; */ 
+                        /* s += "<td>"+"<a href=\"jiancexiangmu3.jsp?no="+value+"&sampleName="+temp[count+1]+"&standard="+temp[count+2]+"\">"+value+"</td>"; */
+                        href="href=jiancexiangmu3.jsp?no="+value+"&sampleName="+temp[count+1]+"&standard="+temp[count+2];
+                        href = encodeURI(href); 
+                        s += "<td>"+"<a "+href+">"+value+"</td>";
                      }
                     /*  else if(count%4 == 2){
                          s += "<td>"+"<a href=\"biaozhunxiangmu.jsp?"+value+ "\">"+value+"</td>";
                      } */
                      else{
-                         s += "<td>"+value+"</td>";
+                          s += "<td>"+value+"</td>";
                      }   
                     count++;
                    });  

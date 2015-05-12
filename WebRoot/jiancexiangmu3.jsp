@@ -50,13 +50,48 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <script type="text/javascript" src="jquery-2.1.3.js"></script>
     <script type="text/javascript">
-      var url = location.href;
+     /*  var url = decodeURI(location.href);
+      alert(url); //检查是否有URL乱码
       var tmp1 = url.split("?")[1]; 
       var tmp2 = tmp1.split("=");
-      var temp;
-      var data = {"no":tmp2};
+      var temp; */
       var count = 0;
-      var href =  "huodetiaomujutixinxi3.jsp?"+tmp1+"&";
+      /* function getQueryString(url){//获得URL参数
+    	  var queryString = window.location.search;
+    	  var parameters = queryString.split("&");
+    	  var pos, paraName, paraValue;
+    	  for(var i=0; i<parameters.length; i++){
+    		  // 获取等号位置
+    		  pos = parameters[i].indexOf('=');
+    		  if(pos == -1) { continue; }
+        	  return queryString;
+        	  // 获取name 和 value
+      		  paraName = parameters[i].substring(0, pos);
+      		  paraValue = parameters[i].substring(pos + 1);
+    	  }
+    	  
+      } */
+      
+      function requestURLParameter(strParame) { //获得URL参数
+    	  var args = new Object( ); 
+    	  var query = location.search.substring(1); 
+
+    	  var pairs = query.split("&"); // Break at ampersand 
+    	  for(var i = 0; i < pairs.length; i++) { 
+    	  var pos = pairs[i].indexOf('='); 
+    	  if (pos == -1) continue; 
+    	  var argname = pairs[i].substring(0,pos); 
+    	  var value = pairs[i].substring(pos+1); 
+    	  value = decodeURIComponent(value); 
+    	  args[argname] = value; 
+    	  } 
+    	  return args[strParame]; 
+       } 
+      /* alert(requestURLParameter('standard')); 测试*/
+      
+      /* var href =  "huodetiaomujutixinxi3.jsp?"+tmp1+"&"; */
+      var href = "href=huodetiaomujutixinxi3.jsp?no="+requestURLParameter('no')+"&sampleName="+requestURLParameter('sampleName')+"&standard="+requestURLParameter('standard');
+      var data = {"no":requestURLParameter('no')};
       function biaozhunxiangmu2(){
          $.ajax({
               dataType:"json",
@@ -75,9 +110,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                      /* value = encodeURI(value); */
                      /*  value = decodeURI(value); */
                      /* href += value; */
-                     temp = value;
-                     temp = encodeURI(temp);
-                     s += "<td>"+"<a href="+href+"content="+temp+" \">"+value+"</td>"; 
+                     /* temp = value;
+                     temp = encodeURI(temp); */
+                     href += "&content=" + value;
+                     /* s += "<td>"+"<a href="+href+"content="+temp+" \">"+value+"</td>";  */
+                     /* s += "<td>"+"<a "+href+" \"&content="+temp+" \">"+value+"</td>"; */  
+                     s += "<td>"+"<a "+href+">"+value+"</td>";
                     count++;
                    });  
                    s += "</table>";
@@ -90,8 +128,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   alert("错误");
               }
             });
-       
       }
+      
     </script>
   </head>
   
@@ -99,7 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <table bgcolor="#ffffff" border="1" cellspacing="0" cellpadding="0" bordercolordark="#ffffff" bordercolorlight="#000000" height="185" >
  	  <tr>
    	    <td> 
-   		    样品编号：<script>document.write(tmp2[1]);</script>
+   		    样品编号：<script>document.write(requestURLParameter('no'));</script>
     	</td>
   	  </tr>
   	</table>
