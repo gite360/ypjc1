@@ -7,23 +7,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
+  	<script type="text/javascript" src="Scripts/DatePicker.js"></script>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'huodeyangpinxinxi.jsp' starting page</title>
+    <title>单日项目分配</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
+	<meta http-equiv="description" content="单日项目分">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	
 	<style type="text/css">
-	    table  {
-	        width:500px;
-	    }
+	    .container {
+      width: 980px;
+	  min-height:1080px;
+      margin: 0 auto;
+	  background-color:#A9D8F3;
+	}
 	</style>
 	
     <script type="text/javascript" src="jquery-2.1.3.js"></script>
@@ -46,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               data: data,
               success: function(jsonObject){
                  var s = "<table border='1'  height='100'>";
-                 s += "<tr><td>产品编号</td><td>产品名称</td><td>标准编号</td><td>样品数量</td></tr>";
+                 s += "<tr><td width='150'><font size='4'>样品编号</font></td><td width='350'><font size='4'>样品名称</font></td><td width='100'><font size='4'>标准编号</font></td><td width='100'><font size='4'>样品数量</font></td></tr>";
                   /* for(i = ) */
                    $.each(jsonObject,function(key,value){//element是data.emp json数组之中的数据  
                     /* alert(i); */
@@ -54,14 +58,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                      if(count%4 == 0){
                         s+="<tr>";
                        /*  s += "<td>"+"<a href=\"jiancexiangmu.jsp?"+value+ "\">"+value+"</td>"; */
-                        s += "<td>"+value+"</td>";
+                        s += "<td>"+"<font size='4'>"+value+"</font>"+"</td>";
                         temp = value;
                      }
                     /*  else if(count%4 == 2){
                          s += "<td>"+"<a href=\"biaozhunxiangmu.jsp?"+value+ "\">"+value+"</td>";
                      } */
                      else if(count%4 == 2){
-                        s += "<td>"+"<a href=\"jiancexiangmu.jsp?no="+temp+"&standard="+value+"\">"+value+"</td>";
+						s += "<td>"+"<a href=\"jiancexiangmu.jsp?no="+temp+"&standard="+value+"\">"+"<font size='4'>"+value+"</font>"+"</td>";
                      }
                      else{
                          s += "<td>"+value+"</td>";
@@ -83,23 +87,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <table bgcolor="#ffffff" border="1" cellspacing="0" cellpadding="0" bordercolordark="#ffffff" bordercolorlight="#000000" height="300" >
-  		<tr>
-  		  <td align="center"  width="170" >
-    	        第一个人：设置检测条目
-    	  </td>
-  		</tr>
-  		<tr>
-  		  <td align="center"  width="170" >
-    	        请输入日期：<input type="text" name="日期" id="日期" size = "3"/>
-    	  </td>
-  		</tr>
-  		<tr>
-  		  <td align="center" width="100"> 
-                <button type="button">确认</button>        
-            </td> 
-  		</tr>
-  	</table>
-  	<div id="result" ></div>
+  <div class="container">
+  	<div align="center"> 
+    <img src="source/TITLE.jpg" width="980" height="150"> 
+    </div>
+<hr>
+<div align="center">
+<br>
+   	<font size="6">单日项目分配</font>
+    <br>
+  </div>
+    <hr>
+  <div align="center">
+  <br>
+    <font size="4">请输入日期</font>
+    <input id="endtime" type="text" onfocus="setday(this)" readonly />
+    <button type="button">确认</button>  
+    <input type="button" value="返回" onclick="javascript:history.go(-1);"/>
+    <br>
+  </div>
+  <hr>
+  <div id="result" align="center"></div>
+  </div>
   </body>
 </html>

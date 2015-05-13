@@ -38,9 +38,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  right: auto;
 	  bottom: 3px;
 	}
-	table  {
-	  width:500px;
-	  height:200px;
+	.container {
+      width: 980px;
+	  min-height:1080px;
+      margin: 0 auto;
+	  background-color:#A9D8F3;
 	}
 	tr{
 	  text-align:center;
@@ -123,55 +125,71 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <!-- <body onload="biaozhunxiangmu2()"> -->
     <body>
-    <table bgcolor="#ffffff" border="1" cellspacing="0" cellpadding="0" bordercolordark="#ffffff" bordercolorlight="#000000" height="185" >
- 	  <tr>
-   	    <td colspan="2"> 
-   		    设置检测条目的具体信息
-    	</td>
-  	  </tr>
- 	  <tr>
-   	    <td colspan="2"> 
-   		    样品编号：<script>document.write(tmp3[1]);</script>
-    	</td>
-       </tr>
-       <tr>
-   	    <td colspan="2"> 
-   		    检测内容：<script>document.write(tmp4[1]);</script>
-    	</td>
-       </tr>
-    	<tr>
+    <div class="container">
+    <div align="center"> <img src="source/TITLE.jpg" width="980" height="150"></div>
+    <hr>
+    <div align="center">
+    <br>
+    	<font size="6">设置检测条目的具体信息</font>
+        <br>
+    </div>
+    <hr>
+    <div align="center">
+    <br>
+    <font size="4">
+    样品编号：<script>document.write(tmp3[1]);</script>
+    &nbsp; &nbsp;
+    检测内容：<script>document.write(tmp4[1]);</script>
+    </font>
+    <br>
+    </div>
+    <hr>
+    <div align="center">
+    <br>
+    <font size="4">
+    请输入样品数量：
+    </font>
+    <input type="text" name="样品数量" id="样品数量" size = "3"/>
+    &nbsp; &nbsp;
+    <button type="button">确认</button> 
+    &nbsp; &nbsp;
+    <input type="button" value="返回" onclick="javascript:history.go(-1);"/>
+    <br>
+    </div>
+    <hr>
+    <div align="center">
+    <br>
+    <table border="1" cellspacing="0" cellpadding="0" bordercolordark="#ffffff" bordercolorlight="#000000" height="185" >
+  		<tr>
   		  <td>
-    	        请输入样品数量：<input type="text" name="样品数量" id="样品数量" size = "3"/>
+    	        <font size="4">请输入浸泡面积1：</font><input type="text" name="浸泡面积1" id="浸泡面积1" size = "3"/>
     	  </td>
-    	  <td> 
-                <button type="button">确认</button>        
-           </td> 
+    	  <td>
+    	        <font size="4">请输入浸泡面积2：</font><input type="text" name="浸泡面积2" id="浸泡面积2" size = "3"/>
+    	  </td>
   		</tr>
   		<tr>
   		  <td>
-    	        请输入浸泡面积1：<input type="text" name="浸泡面积1" id="浸泡面积1" size = "3"/>
+    	        <font size="4">请输入浸泡体积1：</font><input type="text" name="浸泡体积1" id="浸泡体积1" size = "3"/>
     	  </td>
     	  <td>
-    	        请输入浸泡面积2：<input type="text" name="浸泡面积2" id="浸泡面积2" size = "3"/>
+    	        <font size="4">请输入浸泡体积2：</font><input type="text" name="浸泡体积2" id="浸泡体积2" size = "3"/>
     	  </td>
   		</tr>
   		<tr>
   		  <td>
-    	        请输入浸泡体积1：<input type="text" name="浸泡体积1" id="浸泡体积1" size = "3"/>
+    	        <font size="4">请输入器皿编号1：</font><input type="text" name="器皿编号1" id="器皿编号1" size = "3"/>
     	  </td>
     	  <td>
-    	        请输入浸泡体积2：<input type="text" name="浸泡体积2" id="浸泡体积2" size = "3"/>
-    	  </td>
-  		</tr>
-  		<tr>
-  		  <td>
-    	        请输入器皿编号1：<input type="text" name="器皿编号1" id="器皿编号1" size = "3"/>
-    	  </td>
-    	  <td>
-    	        请输入器皿编号2：<input type="text" name="器皿编号2" id="器皿编号2" size = "3"/>
+    	        <font size="4">请输入器皿编号2：</font><input type="text" name="器皿编号2" id="器皿编号2" size = "3"/>
     	  </td>
   		</tr>
   	</table>
-  	<div id="result" ></div>
-  </body>
+    <br>
+    </div>
+    <hr>
+    <br>
+  	<div id="result" align="center"></div>
+    </div>
+</body>
 </html>

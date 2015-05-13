@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'jiancexiangmu.jsp' starting page</title>
+    <title>检测项目</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -36,9 +36,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  right: auto;
 	  bottom: 3px;
 	}
-	table  {
-	  width:500px;
-	  height:100px;
+	.container {
+      width: 980px;
+	  min-height:1080px;
+      margin: 0 auto;
+	  background-color:#A9D8F3;
 	}
 	tr{
 	  text-align:center;
@@ -63,14 +65,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               data: data,
               success: function(jsonObject){
                  var s = "<table border='1'>";
-                 s += "<tr><td>检验内容ID</td><td>检验内容</td></tr>";
+                 s += "<tr><td width='150'><font size='4'>检验内容ID</font></td><td width='350'><font size='4'>检验内容</font></td></tr>";
                    $.each(jsonObject,function(key,value){//element是data.emp json数组之中的数据  
                     if(count%2 == 0){
                         s+="<tr>";
-                        s += "<td> <input name=\"001\" type=\"checkbox\" value="+value+">"+value+"</td>";
+                        s += "<td> <input name=\"001\" type=\"checkbox\" value="+value+">"+"<font size='4'>"+value+"</font>"+"</td>";
                      }
                      else{
-                         s += "<td>"+value+"</td>";
+                         s += "<td>"+"<font size='4'>"+value+"</font>"+"</td>";
                      }
                     count++;
                    });  
@@ -123,23 +125,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body onload="jiancexiangmu()">
-    <table bgcolor="#ffffff" border="1" cellspacing="0" cellpadding="0" bordercolordark="#ffffff" bordercolorlight="#000000" height="185" >
- 	  <tr>
-   	    <td> 
-   		    样品编号：<script>document.write(tmp3[1]);</script>
-    	</td>
-  	  </tr>
-  	  <tr>
-   	    <td> 
-   		    标准编号：<script>document.write(tmp4[1]);</script>
-    	</td>
-  	  </tr>
-  	   <tr>
-  	    <td align="center"> 
-          <button type="button">确认</button>        
-        </td> 
-  	 </tr>
-  	</table>
-  	<div id="result" ></div>
-  </body>
+    <div class="container">
+    <div align="center">
+      <img src="source/TITLE.jpg" width="980" height="150"> 
+      </div>
+    <hr>
+    <div align="center">
+    <br>
+    	<font size="6">检测项目</font>
+        <br>
+    </div>
+    <hr>
+    <div align="center">
+    <br>
+    	<font size="4">
+    	样品编号:<script>document.write(tmp3[1]);</script>
+        &nbsp; &nbsp;
+        标准编号:<script>document.write(tmp4[1]);</script>
+        &nbsp; &nbsp;
+        </font>
+    	<button type="button">确认</button>  
+    	&nbsp; &nbsp;
+        <input type="button" value="返回" onclick="javascript:history.go(-1);"/>
+        <br>
+    </div>
+    <hr>
+    <br>
+  	<div id="result" align="center"></div>
+    </div>
+</body>
 </html>

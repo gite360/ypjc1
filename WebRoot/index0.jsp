@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index0.jsp' starting page</title>
+    <title>样品检测</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -42,6 +42,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	}
 	tr{
 	  text-align:center;
+	}
+	.container {
+      width: 980px;
+	  min-height:1080px;
+      margin: 0 auto;
+	  background-color:#A9D8F3;
 	}
     </style>
     
@@ -122,22 +128,48 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body onload="jiancexiangmu()">
-    <table>
-      <tr>
-        <td>
-          <a href="huodeyangpinxinxi.jsp">第一个人的任务</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="diergeren.jsp">第二个人的任务</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="disangeren3.jsp">第三个人的任务</a>
-        </td>
-      </tr>
-    </table>
+  <div class="container">
+  <div align="center">
+	<img src="source/TITLE.jpg" width="980" height="150"> 
+    </div>
+    <hr>
+    <br><br><br><br><br><br><br><br>
+<table border="0" align="center">
+  <tr>
+    <th scope="col">
+    	<a href="huodeyangpinxinxi.jsp">
+    	<img src="source/1.png" width="300" height="300">
+        </a>
+    </th>
+    <th scope="col">
+    	<a href="diergeren.jsp">
+    	<img src="source/2.png" width="300" height="300">
+        </a>
+    </th>
+    <th scope="col">
+    	<a href="disangeren3.jsp">
+    	<img src="source/3.png" width="300" height="300">
+        </a>
+    </th>
+  </tr>
+  <tr>
+    <td>
+    <font size="5">
+    	<a href="huodeyangpinxinxi.jsp" align="center">单日项目分配</a>
+    </font>
+    </td>
+    <td>
+    <font size="5">
+        <a href="diergeren.jsp" align="center">样品分配</a>
+    </font>
+    </td>
+    <td>
+    <font size="5">
+        <a href="disangeren3.jsp" align="center">生成原始记录</a>
+    </font>
+    </td>
+  </tr>
+  </table>
+  </div>
   </body>
 </html>
