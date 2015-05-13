@@ -49,9 +49,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     
     <script type="text/javascript" src="jquery-2.1.3.js"></script>
-    <script type="text/javascript" src="jquery-2.1.3.js">
+    <script type="text/javascript">
       var url=location.href;
-      /* url = decodeURI(url); */
+       url = decodeURI(url); 
       var tmp1 = url.split("?")[1]; 
       var tmp2 = tmp1.split("&");
       var tmp3 = tmp2[0].split("=");//样品编号

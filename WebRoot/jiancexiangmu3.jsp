@@ -49,7 +49,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     
     <script type="text/javascript" src="jquery-2.1.3.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" >
+    
      /*  var url = decodeURI(location.href);
       alert(url); //检查是否有URL乱码
       var tmp1 = url.split("?")[1]; 
@@ -90,7 +91,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       /* alert(requestURLParameter('standard')); 测试*/
       
       /* var href =  "huodetiaomujutixinxi3.jsp?"+tmp1+"&"; */
-      var href = "href=huodetiaomujutixinxi3.jsp?no="+requestURLParameter('no')+"&sampleName="+requestURLParameter('sampleName')+"&standard="+requestURLParameter('standard');
+      /* var href = "href=huodetiaomujutixinxi3.jsp?no="+requestURLParameter('no')+"&sampleName="+requestURLParameter('sampleName')+"&standard="+requestURLParameter('standard');  */
+      var href = "href=zfczysjl1.jsp?no="+requestURLParameter('no')+"&sampleName="+requestURLParameter('sampleName')+"&standard="+requestURLParameter('standard');
+      
       var data = {"no":requestURLParameter('no')};
       function biaozhunxiangmu2(){
          $.ajax({
@@ -113,6 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                      /* temp = value;
                      temp = encodeURI(temp); */
                      href += "&content=" + value;
+                     href = encodeURI(href);
                      /* s += "<td>"+"<a href="+href+"content="+temp+" \">"+value+"</td>";  */
                      /* s += "<td>"+"<a "+href+" \"&content="+temp+" \">"+value+"</td>"; */  
                      s += "<td>"+"<a "+href+">"+value+"</td>";
