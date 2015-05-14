@@ -81,7 +81,7 @@
          /* tiaomujutijinxi(); */
          getItemSpecificInfo();
          getWareReagentWeight();
-         getWaretWeight();
+         /* getWaretWeight(); */
      }
      
      $(document).ready(function(){//提前预选复选框
@@ -534,18 +534,21 @@
     <div align="center">
       <img src="source/TITLE.jpg" width="980" height="150"> </div>
     <hr>
-	<h1 >蒸发残渣原始记录</h1></br>
-   
 	  <table width="770" border="0" bgcolor="#ffffff">
+      	<tr>
+        <td colspan="2" align="center">
+        <br><h1>蒸发残渣原始记录</h1></br>
+        </td>
+        </tr>
 		  <tr>
 		    <td colspan="2" align="right">
-            No:&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+            No:
             <input id="id" type="text" size="3">
             </td>
 	      </tr>
 		  <tr>
-		    <td align="left">&nbsp; &nbsp; &nbsp; &nbsp;选择适用的在□内打“√”</td>
-		    <td align="right">第&nbsp; &nbsp; &nbsp; &nbsp;页</td>
+		    <td align="left">&nbsp; &nbsp;选择适用的在□内打“√”</td>
+		    <td align="right">第&nbsp; &nbsp;页</td>
 	      </tr>
 </table>
 		<table bgcolor="#ffffff" border="1" cellspacing="0" cellpadding="0" bordercolordark="#ffffff" bordercolorlight="#000000" width="770" height="145" >
@@ -563,9 +566,9 @@
                 <table width="463" height="118" border="0">
                           <tr>
                             <td width="25%" height="25" align="left"><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="9681"/>
-                            GB9681-1988&nbsp; </td>
+                            GB9681-1988</td>
                             <td width="25%" align="left" ><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="9683"/>
-                            GB9683-1988&nbsp;</td>
+                            GB9683-1988</td>
                             <td width="25%" align="left"><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="9687"/>
                             GB9687-1988</td>
                             <td width="25%" align="left"><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="9688"/>
@@ -573,13 +576,13 @@ GB9688-1988</td>
                           </tr>
                           <tr>
                             <td height="25" align="left"><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="9689"/>
-                            GB9689-1988&nbsp;</td>
+                            GB9689-1988</td>
                             <td align="left"><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="9690"/>
                             GB9690-2009</td>
                             <td align="left"><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="13113"/>
                             GB13113-1991</td>
                             <td align="left"><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="14942"/>
-                            GB14942-1994&nbsp;</td>
+                            GB14942-1994</td>
                           </tr>
                           <tr>
                             <td height="25" align="left"><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="17326"/>
@@ -587,7 +590,7 @@ GB9688-1988</td>
                             <td align="left"><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="17327"/>
                             GB17327-1998</td>
                             <td align="left"><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="4806.1"/>
-                            GB4806.1-1994&nbsp;</td>
+                            GB4806.1-1994</td>
                             <td align="left"><input style="margin-top:0px" type="checkbox" name="checkbox" id="checkbox" value="4806.2"/>
                             GB4806.2-1994</td>
                   </tr>
@@ -788,7 +791,7 @@ GB/T5009.</td>
         	  <table width="80" border="0">
                 <tr>
                   <td width="99" align="left"><input name="jyxm" type="checkbox" value="20℃">
-                  20℃ ;</td>
+                  20℃ </td>
                 </tr>
                 <tr>
                   <td align="left"><input name="jyxm" type="checkbox" value="60℃">
@@ -812,7 +815,7 @@ GB/T5009.</td>
     		  <table width="100" border="0">
                 <tr>
                   <td width="94" align="left"><input name="jyxm" type="checkbox" value="0.5h(30min)">
-                  0.5h（30min) </td>
+                  0.5h(30min) </td>
                 </tr>
                 <tr>
                   <td align="left"><input name="jyxm" type="checkbox" value="1h">
@@ -834,48 +837,68 @@ GB/T5009.</td>
         	</td>
   		</tr>
   		<tr>
-            <td align="left">&nbsp;&nbsp;<input name="cdytj" type="checkbox" value="测定用体积V1(mL)" >
-          &nbsp;&nbsp;测定用体积V<sub>1</sub>(mL)</td> 
-            <td colspan="3" align="left"><input name="cdytj" type="checkbox"  checked = checked value="200">200
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-              <input name="cdytj" type="checkbox" value="">
+            <td align="left"><input name="cdytj" type="checkbox" value="测定用体积V1(mL)" >
+          测定用体积V<sub>1</sub>(mL)</td> 
+            <td colspan="3" align="left"><table width="100%" border="0">
+              <tr>
+                <td width="50%" align="left"><input name="cdytj" type="checkbox"  checked = checked value="200">200</td>
+                <td width="50%" align="left"><input name="cdytj" type="checkbox" value=""></td>
+              </tr>
+            </table>
             </td>
             <td colspan="3" align="left">
-              <input name="cdytj" type="checkbox"  checked = checked value="200">200
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-              <input name="cdytj" type="checkbox" value="">
+            <table width="100%" border="0">
+              <tr>
+                <td width="50%" align="left"><input name="cdytj" type="checkbox"  checked = checked value="200">200</td>
+                <td width="50%" align="left"><input name="cdytj" type="checkbox" value=""></td>
+              </tr>
+            </table>
             </td>
   </tr>
           <tr>
-            <td align="left">&nbsp;&nbsp;<input name="jpmj" type="checkbox" value="浸泡面积S(cm2)">&nbsp;&nbsp;浸泡面积S(cm<sup>2</sup>)</td> 
+            <td align="left"><input name="jpmj" type="checkbox" value="浸泡面积S(cm2)">浸泡面积S(cm<sup>2</sup>)</td> 
             <td colspan="3" align="left">
-              <input name="jpmj" type="checkbox" value="100,S=5*10*2">100,S=5*10*2
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-              <input name="jpmj" type="checkbox" checked=checked value="S=">S  =
+              <table width="100%%" border="0">
+                <tr>
+                  <td width="50%" align="left"><input name="jpmj" type="checkbox" value="100,S=5*10*2">100,S=5*10*2</td>
+                  <td width="50%" align="left"><input name="jpmj" type="checkbox" checked=checked value="S=">S  =
               <!-- <input type="text" name="s1" id="s1" size = "8"/> -->
-              <div id="s1" >浸泡液面积1</div>
+              <text id="s1" >浸泡液面积1</text></td>
+                </tr>
+              </table>
             </td>
             <td colspan="3" align="left">
-              <input name="jpmj" type="checkbox" value="100,S=5*10*2">100,S=5*10*2
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-              <input name="jpmj" type="checkbox" checked=checked value="S=">S  =
+              <table width="100%%" border="0">
+                <tr>
+                  <td align="left" width="50%"><input name="jpmj" type="checkbox" value="100,S=5*10*2">
+              100,S=5*10*2</td>
+                  <td align="left" width="50%"><input name="jpmj" type="checkbox" checked=checked value="S=">S  =
               <!-- <input type="text" name="s2" id="s2" size = "8"/> -->
-              <div id="s2" >浸泡液面积2</div>
+              <text id="s2" >浸泡液面积2</text></td>
+                </tr>
+              </table>
+              
             </td>
           </tr>
           <tr>
-            <td align="left">&nbsp;&nbsp;<input name="jpytj" type="checkbox" value="浸泡液体积V">&nbsp;&nbsp;浸泡液体积V(mL)</td> 
+            <td align="left"><input name="jpytj" type="checkbox" value="浸泡液体积V">浸泡液体积V(mL)</td> 
             <td colspan="3" align="left">
-              <input name="jpytj" type="checkbox" value="200">200
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-              <input name="jpytj" type="checkbox" checked=checked value="">
-              <div id="v1" >浸泡液体积1</div>
+            <table width="100%%" border="0">
+  <tr>
+    <td width="50%" align="left"><input name="jpytj" type="checkbox" value="200">200</td>
+    <td width="50%" align="left"><input name="jpytj" type="checkbox" checked=checked value="">
+              <text id="v1" >浸泡液体积1</text></td>
+  </tr>
+</table>
             </td>
             <td colspan="3" align="left">
-              <input name="jpytj" type="checkbox" value="200">200
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-              <input name="jpytj" type="checkbox" checked=checked value="">
-              <div id="v2" >浸泡液面体积2</div>
+              <table width="100%%" border="0">
+  <tr>
+    <td width="50%" align="left"><input name="jpytj" type="checkbox" value="200">200</td>
+    <td width="50%" align="left"><input name="jpytj" type="checkbox" checked=checked value="">
+              <text id="v2" >浸泡液体积2</text></td>
+  </tr>
+</table>
             </td>
           </tr>
 </table>
