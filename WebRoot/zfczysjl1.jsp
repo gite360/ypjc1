@@ -53,6 +53,8 @@
       var temp;
       var count0 = 0;//计数器
       tmp4[1] = decodeURI(tmp4[1]);
+      var wareno1;
+      var wareno2;
       
      /*  var test = new String(request.getParameter("url").getBytes("8859_1")); */
      
@@ -76,10 +78,10 @@
        
        /* alert(contentArray[0]); */
      function allSettedInfo(){
-         tiaomujutijinxi();
+         /* tiaomujutijinxi(); */
          getItemSpecificInfo();
-         getWareReagentWeight()
-         getWaretWeight()
+         getWareReagentWeight();
+         getWaretWeight();
      }
      
      $(document).ready(function(){//提前预选复选框
@@ -110,14 +112,16 @@
     	 
      });
      
-     var wareno1,wareno2;
+     
      function getItemSpecificInfo(){//获得条目具体信息
-    	 
+    	 var SpecificInfoData = {"no":requestURLParameter('no'),"content":requestURLParameter('content')};
+    	 /* alert(JSON.stringify(SpecificInfoData)); */
     	 $.ajax({
              dataType:"json",
              type: "POST",
              url: "servlet/getinfo",
-             data: data,
+             data: SpecificInfoData,
+             
              success: function(jsonObject){
             	var s1,s2,v1,v2,num;
                   s1 = jsonObject.s1;
@@ -125,68 +129,20 @@
                   v1 = jsonObject.v1;
                   v2 = jsonObject.v2;
                   num = jsonObject.num;
-                  wareno1 = jsonObject.wareno1;
-                  vareno2 = jsonObject.wareno2;
+                  wareno1 = jsonObject.器皿编号1;
+                  wareno2 = jsonObject.器皿编号2;
+                  
                   $("#s1").html(s1); 
                   $("#s2").html(s2);
                   $("#v1").html(v1); 
                   $("#v2").html(v2);
                   $("#num").html(num);
-             },
-             complete:function(){
-             },
-             global:true,
-             error: function(){
-                 alert("回调函数错误");
-             }
-           });
-     }
-     
-     function getWareReagentWeight(){//获得器皿试剂信息
-    	 ryData = {"ry":contentArray[1]};
-    	 $.ajax({
-             dataType:"json",
-             type: "POST",
-             url: "servlet/getbase",
-             data: ryData,
-             success: function(jsonObject){
-            	var standardWeight1 = jsonObject.基准恒重1; 
-            	var standardWeight2 = jsonObject.基准恒重2;
-            	var standardWeightAReagent1 = jsonObject.基准恒重试剂空白1;
-            	var standardWeightAReagent2 = jsonObject.基准恒重试剂空白2;
-            	var m0a, m0b, m2a, m2b;
-            	m0a = standardWeight2/2 + standardWeight1/2;
-            	m0b = m0a;
-            	m2a = standardWeightAReagent2/2 + standardWeightAReagent1/2;
-            	m2b = m2a
-            	$("#jzhz1a").html(standardWeight1); 
-                $("#jzhz1b").html(standardWeight1);
-                $("#jzhz2a").html(standardWeight2); 
-                $("#jzhz2b").html(standardWeight2);
-                $("#m0a").html(m0a); 
-                $("#m0b").html(m0b);
-                
-                
-                $("#jzhzsjkb1a").html(standardWeightAReagent1); 
-                $("#jzhzsjkb1b").html(standardWeightAReagent1);
-                $("#jzhzsjkb2a").html(standardWeightAReagent2); 
-                $("#jzhzsjkb2b").html(standardWeightAReagent2);
-                $("#m2a").html(m2a); 
-                $("#m2b").html(m2b);
-                
-                
-             },
-             complete:function(){
-             },
-             global:true,
-             error: function(){
-                 alert("错误");
-             }
-           });
-     }
-     
-     function getWaretWeight(){//获得某器皿的称重数据
-    	 ryData = {"wareno":wareno1};
+                  
+                  ///////
+                  
+                  
+                  ryData = {"wareno":wareno1};
+    	
     	 $.ajax({
              dataType:"json",
              type: "POST",
@@ -309,7 +265,170 @@
                  alert("错误");
              }
            });
+                  
+                  ///////
+                  
+             },
+             
+             complete:function(){
+             },
+             global:true,
+             error: function(){
+                 alert("回调函数错误");
+             }
+           });
+    	 
      }
+    
+     
+     function getWareReagentWeight(){//获得器皿试剂信息
+    	 ryData = {"ry":contentArray[1]};
+    	 $.ajax({
+             dataType:"json",
+             type: "POST",
+             url: "servlet/getbase",
+             data: ryData,
+             success: function(jsonObject){
+            	var standardWeight1 = jsonObject.基准恒重1; 
+            	var standardWeight2 = jsonObject.基准恒重2;
+            	var standardWeightAReagent1 = jsonObject.基准恒重试剂空白1;
+            	var standardWeightAReagent2 = jsonObject.基准恒重试剂空白2;
+            	var m0a, m0b, m2a, m2b;
+            	m0a = standardWeight2/2 + standardWeight1/2;
+            	m0b = m0a;
+            	m2a = standardWeightAReagent2/2 + standardWeightAReagent1/2;
+            	m2b = m2a
+            	$("#jzhz1a").html(standardWeight1); 
+                $("#jzhz1b").html(standardWeight1);
+                $("#jzhz2a").html(standardWeight2); 
+                $("#jzhz2b").html(standardWeight2);
+                $("#m0a").html(m0a); 
+                $("#m0b").html(m0b);
+                
+                
+                $("#jzhzsjkb1a").html(standardWeightAReagent1); 
+                $("#jzhzsjkb1b").html(standardWeightAReagent1);
+                $("#jzhzsjkb2a").html(standardWeightAReagent2); 
+                $("#jzhzsjkb2b").html(standardWeightAReagent2);
+                $("#m2a").html(m2a); 
+                $("#m2b").html(m2b);
+                
+                
+             },
+             complete:function(){
+             },
+             global:true,
+             error: function(){
+                 alert("错误");
+             }
+           });
+     }
+     
+     /*
+     function getWaretWeight(){//获得某器皿的称重数据
+    	 ryData = {"wareno":wareno1};
+    	 alert(wareno1);
+    	 $.ajax({
+             dataType:"json",
+             type: "POST",
+             url: "servlet/getwareinfo",
+             data: ryData,
+             success: function(jsonObject){
+            	var Weight1 = jsonObject.恒重1; 
+            	var Weight2 = jsonObject.恒重2;
+            	var WeightSample1 = jsonObject.恒重样品1;
+            	var WeightSample2 = jsonObject.恒重样品2;
+            	var m3a1, m3a2, m4a1, m4a2;
+            	
+            	m3a1 = Weight2/2 + Weight1/2;
+            	m3a2 = Weight2/2 + Weight1/2;
+            	
+            	$("#hz1a1").html(Weight1); 
+                $("#hz1a2").html(Weight1);
+               
+                
+                $("#hz2a1").html(Weight2); 
+                $("#hz2a2").html(Weight2);
+              
+                
+                $("#m3a1").html(m3a1); 
+                $("#m3a2").html(m3a2);
+              
+                
+                
+                m4a1 = WeightSample2/2 + WeightSample1/2;
+                m4a2 = WeightSample2/2 + WeightSample1/2;
+            	
+                $("#hzyp1a1").html(WeightSample1); 
+                $("#hzyp2a1").html(WeightSample2);
+             
+                $("#hzyp1a2").html(WeightSample1); 
+                $("#hzyp2a2").html(WeightSample2);
+              
+                $("#m4a1").html(m4a1); 
+                $("#m4a2").html(m4a2);
+               
+             },
+             complete:function(){
+             },
+             global:true,
+             error: function(){
+                 alert("错误");
+             }
+           });
+    	 
+    	 ryData = {"wareno":wareno2};
+    	 $.ajax({
+             dataType:"json",
+             type: "POST",
+             url: "servlet/getwareinfo",
+             data: ryData,
+             success: function(jsonObject){
+            	var Weight1 = jsonObject.恒重1; 
+            	var Weight2 = jsonObject.恒重2;
+            	var WeightSample1 = jsonObject.恒重样品1;
+            	var WeightSample2 = jsonObject.恒重样品2;
+            	var m3b1, m3b2, m4b3, m4b4;
+            	
+            	m3b = Weight2/2 + Weight1/2;
+            	
+            	
+            	
+                $("#hz1b1").html(Weight1); 
+                $("#hz1b2").html(Weight1);
+                
+                
+                $("#hz2b1").html(Weight2); 
+                $("#hz2b2").html(Weight2);
+                
+                
+                $("#m3b1").html(m3b);
+                $("#m3b2").html(m3b);
+                
+                
+                m4b = WeightSample2/2 + WeightSample1/2;
+            	
+                $("#hzyp1b1").html(WeightSample1); 
+                $("#hzyp1b2").html(WeightSample1);
+                
+               
+                $("#hzyp2b1").html(WeightSample2); 
+                $("#hzyp2b2").html(WeightSample2);
+                
+               
+                $("#m4b1").html(m4b);
+                $("#m4b2").html(m4b);
+                
+             
+             },
+             complete:function(){
+             },
+             global:true,
+             error: function(){
+                 alert("错误");
+             }
+           });
+     }*/
      
      
      
@@ -318,7 +437,7 @@
     
      
      /* alert($(":checkbox[name='checkbox']").val()); */
-      function tiaomujutijinxi(){
+     /*  function tiaomujutijinxi(){
           $.ajax({
               dataType:"json",
               type: "POST",
@@ -327,11 +446,9 @@
               success: function(jsonObject){
                  var s = "<table border='1'>";
                 
-                 //$.each(jsonObject,function(key,value){//element是data.emp json数组之中的数据
+                
                    s += "<tr>";
-                   //temp = value;
-                   //s += "<td>"+"检测内容："+value+"</td>";
-                   /* s += "<td>"+"检测内容："+tmp2[1]+"</td>" */;
+                  
                    s += "<td>浸泡面积</td>"+"<td>"+jsonObject.s1+"</td>"+"<td>"+jsonObject.s2+"</td>";
                    s += "</tr>";
                    s += "<tr>";
@@ -341,7 +458,7 @@
                    s += "<td>器皿编号</td>"+"<td>"+jsonObject.wareno1+"</td>"+"<td>"+jsonObject.wareno2+"</td>";
                    s += "</tr>";
                    $("#result0").html(s); 
-                 //});    
+                   
               },
               complete:function(){
               },
@@ -350,9 +467,10 @@
                   alert("错误");
               }
             });
-      }
+      } */
       
-       function showWareWeight(){//获得某器皿的称重数据
+    //获得某器皿的称重数据
+       /* function showWareWeight(){
           $.ajax({
               dataType:"json",
               type: "POST",
@@ -360,12 +478,7 @@
               data: data,
               success: function(jsonObject){
                  var s = "<table border='1'>";
-                
-                 //$.each(jsonObject,function(key,value){//element是data.emp json数组之中的数据
                    s += "<tr>";
-                   //temp = value;
-                   //s += "<td>"+"检测内容："+value+"</td>";
-                   /* s += "<td>"+"检测内容："+tmp2[1]+"</td>" */;
                    s += "<td>浸泡面积</td>"+"<td>"+jsonObject.s1+"</td>"+"<td>"+jsonObject.s2+"</td>";
                    s += "</tr>";
                    s += "<tr>";
@@ -375,7 +488,6 @@
                    s += "<td>器皿编号</td>"+"<td>"+jsonObject.wareno1+"</td>"+"<td>"+jsonObject.wareno2+"</td>";
                    s += "</tr>";
                    $("#result0").html(s); 
-                 //});    
               },
               complete:function(){
               },
@@ -384,13 +496,11 @@
                   alert("错误");
               }
             });
-      } 
+      }  */
       
-      $(document).ready(function(){
+      /* $(document).ready(function(){
           $("button").click(function(){
-            /* var t = $(":text[name='标准名称']").map(function(){return $(this).val(); }).get(); */
-            /* var t = $(":text[name='标准名称']").val(); */ 
-            /* var t = $("#日期").val(); */
+           
             var num = $("#样品数量").val();
             var s1 = $("#浸泡面积1").val();
             var v1 = $("#浸泡体积1").val();
@@ -399,7 +509,7 @@
             var v2 = $("#浸泡体积2").val();
             var wareno2 = $("#器皿编号2").val();
             var data = {"no":tmp3[1],"num":num,"content":tmp4[1],"s1":s1,"s2":s2,"v1":v1,"v2":v2,"wareno1":wareno1,"wareno2":wareno2,};
-            /* var count = 0; */
+           
              alert(JSON.stringify(data)); 
             $.ajax({
               dataType:"json",
@@ -415,7 +525,7 @@
               global:true,
             });
          });
-        });
+        }); */
       
     </script>
 </head>

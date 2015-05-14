@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
       /* var href =  "huodetiaomujutixinxi3.jsp?"+tmp1+"&"; */
       /* var href = "href=huodetiaomujutixinxi3.jsp?no="+requestURLParameter('no')+"&sampleName="+requestURLParameter('sampleName')+"&standard="+requestURLParameter('standard');  */
-      var href = "href=zfczysjl1.jsp?no="+requestURLParameter('no')+"&sampleName="+requestURLParameter('sampleName')+"&standard="+requestURLParameter('standard');
+      /* var href = "href=zfczysjl1.jsp?no="+requestURLParameter('no')+"&sampleName="+requestURLParameter('sampleName')+"&standard="+requestURLParameter('standard'); */
       
       var data = {"no":requestURLParameter('no')};
       function biaozhunxiangmu2(){
@@ -117,6 +117,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                      /* href += value; */
                      /* temp = value;
                      temp = encodeURI(temp); */
+                     var href = "href=zfczysjl1.jsp?no="+requestURLParameter('no')+"&sampleName="+requestURLParameter('sampleName')+"&standard="+requestURLParameter('standard');
                      href += "&content=" + value;
                      href = encodeURI(href);
                      /* s += "<td>"+"<a href="+href+"content="+temp+" \">"+value+"</td>";  */

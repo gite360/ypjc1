@@ -37,8 +37,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           $("button").click(function(){
             /* var t = $(":text[name='日期']").map(function(){return $(this).val(); }).get(); */
             /* var t = $(":text[name='标准名称']").val(); */ 
-            var t = $("#日期").val();
+            var t = $("#endtime").val();
             var data = {"date":t};
+            /* alert(t); */
             var count = 0;
             /*  alert(JSON.stringify(data));  */
               /* alert(data);   */
@@ -101,7 +102,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div align="center">
   <br>
     <font size="4">请输入日期</font>
-    <input id="endtime" type="text" onfocus="setday(this)" readonly />
+    <input name = "日期" id="endtime" type="text" onfocus="setday(this)" readonly />
     <button type="button">确认</button>  
     <input type="button" value="返回" onclick="javascript:history.go(-1);"/>
     <br>

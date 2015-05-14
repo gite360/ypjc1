@@ -34,7 +34,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         
         $(document).ready(function(){
           $("button").click(function(){
-            var t = $("#日期").val();
+            var t = $("#endtime").val();
+            /* alert(t); */
             var data = {"date":t};
             var count = 0;
             var count0 = 0;

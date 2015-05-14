@@ -36,7 +36,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           $("button").click(function(){
             /* var t = $(":text[name='标准名称']").map(function(){return $(this).val(); }).get(); */
             /* var t = $(":text[name='标准名称']").val(); */ 
-            var t = $("#日期").val();
+            var t = $("#endtime").val();
+            /* alert(t); */
             var data = {"date":t};
             var count = 0;
              /* alert(JSON.stringify(data));  */
