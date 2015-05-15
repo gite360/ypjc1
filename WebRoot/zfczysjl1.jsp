@@ -56,12 +56,14 @@
       var wareno1;
       var wareno2;
       
+    
+      
      /*  var test = new String(request.getParameter("url").getBytes("8859_1")); */
      
       function requestURLParameter(strParame) { //获得URL参数
+    	 
     	  var args = new Object( ); 
     	  var query = location.search.substring(1); 
-
     	  var pairs = query.split("&"); // Break at ampersand 
     	  for(var i = 0; i < pairs.length; i++) { 
     	  var pos = pairs[i].indexOf('='); 
@@ -79,11 +81,17 @@
        /* alert(contentArray[0]); */
      function allSettedInfo(){
          /* tiaomujutijinxi(); */
+         aaa();
          getItemSpecificInfo();
          getWareReagentWeight();
+         
          /* getWaretWeight(); */
      }
      
+     function aaa(){
+    	 var aa = document.getElementById("s1").innerHTML;
+ 	     alert(aa);
+     }
      $(document).ready(function(){//提前预选复选框
     	 
     	 contentArray = requestURLParameter('content').split(",");//content的内容保存在数组里
@@ -116,6 +124,7 @@
      function getItemSpecificInfo(){//获得条目具体信息
     	 var SpecificInfoData = {"no":requestURLParameter('no'),"content":requestURLParameter('content')};
     	 /* alert(JSON.stringify(SpecificInfoData)); */
+    	
     	 $.ajax({
              dataType:"json",
              type: "POST",
@@ -137,6 +146,8 @@
                   $("#v1").html(v1); 
                   $("#v2").html(v2);
                   $("#num").html(num);
+                  
+                 
                   
                   ///////
                   
@@ -257,6 +268,9 @@
                 $("#jzhzsjkb2b").html(standardWeightAReagent2);
                 $("#m2a").html(m2a); 
                 $("#m2b").html(m2b); */
+                
+                var aa = document.getElementById("s1").innerHTML;
+        	     alert(aa);
              },
              complete:function(){
              },
@@ -282,6 +296,8 @@
     
      
      function getWareReagentWeight(){//获得器皿试剂信息
+    	 var aa = document.getElementById("s1").innerHTML;
+	     alert(aa);
     	 ryData = {"ry":contentArray[1]};
     	 $.ajax({
              dataType:"json",
@@ -323,7 +339,7 @@
              }
            });
      }
-     
+   
      /*
      function getWaretWeight(){//获得某器皿的称重数据
     	 ryData = {"wareno":wareno1};
@@ -694,7 +710,7 @@ GB/T5009.</td>
   		
 <table bgcolor="#ffffff" border="1" cellspacing="0" cellpadding="0" bordercolordark="#ffffff" bordercolorlight="#000000" width ="770" height="440" >
   		<tr>
-    		<td  width="141" height="180" align="center">
+    		<td  width="141" height="180" align="center" id= "ssssss">
     		    检验项目
     		</td>
     		<td align="left" width="102"><table width="93" height="134" border="0">
@@ -1005,7 +1021,7 @@ GB/T5009.</td>
       <tr align="center">
        <td colspan="2">
           平均值<br>
-          <input name="pjz" type="checkbox" value="200">mg/L
+          <input name="pjz" id="pjz" type="checkbox" value="200">mg/L
           <input name="pjz" type="checkbox" value="">mg/dm<sup>2</sup>
         </td>
         <td colspan="2"><input type="text" name="pjz1" id="pjz1" size = "42"/></td>
@@ -1017,8 +1033,14 @@ GB/T5009.</td>
           <input name="bzz" type="checkbox" value="200">mg/L
           <input name="bzz" type="checkbox" value="">mg/dm<sup>2</sup>
         </td>
-        <td colspan="2"><input type="text" name="bzz1" id="bzz1" size = "42"/></td>
-        <td colspan="2"><input type="text" name="bzz2" id="bzz2" size = "42"/></td>
+        <td colspan="2">
+          <!-- <input type="text" name="bzz1" id="bzz1" size = "42"/> -->
+          30
+        </td>
+        <td colspan="2">
+          <!-- <input type="text" name="bzz2" id="bzz2" size = "42"/> -->
+          30
+        </td>
       </tr>
       <tr align="center">
        <td colspan="2">单项结论</td>
