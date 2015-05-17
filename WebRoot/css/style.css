@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+body,td,th, tr {
+    font-size: 18px;
+	left: auto;
+	top: 3px;
+    right: auto;
+	bottom: 3px;
+	
+	text-align:center;
+}
+
+ .container {
+    width: 980px;
+    min-height:1080px;
+    margin: 0 auto;
+    background-color:#A9D8F3;
+}
+
+
+#title {
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-align:center;
+    margin-left:300px;
+}
+	

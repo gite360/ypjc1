@@ -17,32 +17,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="单日项目分">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 	
-	<style type="text/css">
-	    .container {
-      width: 980px;
-	  min-height:1080px;
-      margin: 0 auto;
-	  background-color:#A9D8F3;
-	}
-	</style>
+	<link href="${pageContext.request.contextPath }/css/style.css" rel="stylesheet" type="text/css" />
+	<style type="text/css"></style>
 	
     <script type="text/javascript" src="jquery-2.1.3.js"></script>
     <script type="text/javascript">
         
         $(document).ready(function(){
           $("button").click(function(){
-            /* var t = $(":text[name='日期']").map(function(){return $(this).val(); }).get(); */
-            /* var t = $(":text[name='标准名称']").val(); */ 
             var t = $("#endtime").val();
             var data = {"date":t};
-            /* alert(t); */
             var count = 0;
             /*  alert(JSON.stringify(data));  */
-              /* alert(data);   */
             var temp;
             $.ajax({
               dataType:"json",
@@ -52,26 +39,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               success: function(jsonObject){
                  var s = "<table border='1'  height='100'>";
                  s += "<tr><td width='150'><font size='4'>样品编号</font></td><td width='350'><font size='4'>样品名称</font></td><td width='100'><font size='4'>标准编号</font></td><td width='100'><font size='4'>样品数量</font></td></tr>";
-                  /* for(i = ) */
                    $.each(jsonObject,function(key,value){//element是data.emp json数组之中的数据  
-                    /* alert(i); */
-                   
                      if(count%4 == 0){
                         s+="<tr>";
-                       /*  s += "<td>"+"<a href=\"jiancexiangmu.jsp?"+value+ "\">"+value+"</td>"; */
                         s += "<td>"+"<font size='4'>"+value+"</font>"+"</td>";
                         temp = value;
                      }
-                    /*  else if(count%4 == 2){
-                         s += "<td>"+"<a href=\"biaozhunxiangmu.jsp?"+value+ "\">"+value+"</td>";
-                     } */
                      else if(count%4 == 2){
 						s += "<td>"+"<a href=\"jiancexiangmu.jsp?no="+temp+"&standard="+value+"\">"+"<font size='4'>"+value+"</font>"+"</td>";
                      }
                      else{
                          s += "<td>"+value+"</td>";
                      }   
-                      
                     count++;
                    });  
                    s += "</table>";

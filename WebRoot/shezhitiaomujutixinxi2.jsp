@@ -18,36 +18,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-    <style type="text/css">
-    #title {
-	  font-size: 14px;
-	  font-style: normal;
-	  line-height: normal;
-	  font-weight: bold;
-	  font-variant: normal;
-	  /* text-align:center; */
-	  margin-left:300px;
-	}
-    body,td,th {
-	  font-size: 12px;
-	  left: auto;
-	  top: 3px;
-	  right: auto;
-	  bottom: 3px;
-	}
-	.container {
-      width: 980px;
-	  min-height:1080px;
-      margin: 0 auto;
-	  background-color:#A9D8F3;
-	}
-	tr{
-	  text-align:center;
-	}
-    </style>
+	
+	<link href="${pageContext.request.contextPath }/css/style.css" rel="stylesheet" type="text/css" />
+	<style type="text/css"></style>
     
     
     <script type="text/javascript" src="jquery-2.1.3.js"></script>
