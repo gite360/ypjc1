@@ -26,7 +26,7 @@
 	bottom: 3px;
 	}
     </style>
-	<script language="JavaScript" src="zjs.js">
+	<script language="JavaScript" src="${pageContext.request.contextPath}/js/zjs.js">
 	
 	</script>
 </head>

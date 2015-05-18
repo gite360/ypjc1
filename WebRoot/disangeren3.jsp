@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="${pageContext.request.contextPath }/css/style.css" rel="stylesheet" type="text/css" />
 	<style type="text/css"></style>
 	
-    <script type="text/javascript" src="jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.1.3.js"></script>
     <script type="text/javascript">
         
         $(document).ready(function(){

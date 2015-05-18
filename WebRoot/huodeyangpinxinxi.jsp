@@ -18,14 +18,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="单日项目分">
 	
-	<link href="${pageContext.request.contextPath }/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
 	<style type="text/css"></style>
 	
-    <script type="text/javascript" src="jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.1.3.js"></script>
     <script type="text/javascript">
         
         $(document).ready(function(){
-          $("button").click(function(){
+         /*  $("button").click(function(){ */
             var t = $("#endtime").val();
             var data = {"date":t};
             var count = 0;
@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               },
               global:true,
             });
-         });
+         /* }); */
         });
    </script>
   </head>
@@ -71,23 +71,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<div align="center"> 
     <img src="source/TITLE.jpg" width="980" height="150"> 
     </div>
-<hr>
-<div align="center">
-<br>
-   	<font size="6">单日项目分配</font>
-    <br>
-  </div>
     <hr>
-  <div align="center">
-  <br>
-    <font size="4">请输入日期</font>
-    <input name = "日期" id="endtime" type="text" onfocus="setday(this)" readonly />
-    <button type="button">确认</button>  
-    <input type="button" value="返回" onclick="javascript:history.go(-1);"/>
-    <br>
-  </div>
-  <hr>
-  <div id="result" align="center"></div>
+    <div align="center">
+      <br>
+   	    <font size="6">单日项目分配</font>
+      </br>
+    </div>
+    </hr>
+    <div align="center">
+      <br>
+        <font size="4">请输入日期</font>
+        <input name = "日期" id="endtime" type="text" onfocus="setday(this)" readonly />
+        <button type="button">确认</button>  
+        <input type="button" value="返回" onclick="javascript:history.go(-1);"/>
+      </br>
+    </div>
+    <hr>
+    <div id="result" align="center"></div>
+    
   </div>
   </body>
 </html>
+
+
